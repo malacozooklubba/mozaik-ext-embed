@@ -1,5 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import Mozaik from 'mozaik/browser';
+import React, {
+  Component,
+  PropTypes
+} from 'react';
+//import Mozaik from 'mozaik/browser';
 
 
 class Markup extends Component {
@@ -13,28 +16,36 @@ class Markup extends Component {
   }
 
   render() {
-    const { title } = this.props;
-    let output = (<div className="widget-markup__body" dangerouslySetInnerHTML={{
-      __html: this.props.content
-    }}></div>);
+    const {
+      title
+    } = this.props;
+    let output = ( < div className = "widget-markup__body"
+      dangerouslySetInnerHTML = {
+        {
+          __html: this.props.content
+        }
+      } > < /div>);
 
-    if (title) {
-      output = (
-        <div className="widget-markup__container">
-          <div className="widget__header">
-            {title}
-          </div>
-          {output}
-        </div>
-      );
+      if (title) {
+        output = ( <
+          div className = "widget-markup__container" >
+          <
+          div className = "widget__header" > {
+            title
+          } <
+          /div> {
+            output
+          } <
+          /div>
+        );
+      }
+
+      return output;
     }
-
-    return output;
   }
-}
 
-Markup.propTypes = {
-  content: PropTypes.string.isRequired
-};
+  Markup.propTypes = {
+    content: PropTypes.string.isRequired
+  };
 
-export default Markup;
+  export default Markup;
